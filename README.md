@@ -158,5 +158,52 @@ we changed the value of the source and we got as a result the image of the cat
 
 ![image](https://github.com/user-attachments/assets/e02b3a3b-3831-452a-b142-8cb93fcbe355)
 
+# 2 stars
+
+## Login Admin 
+
+In this challenge we are exploiting an sql injection vulnerabilityin order to login as an admin
+first we tried a simple sql injection and based on the output we can see that its possible to perform the attack
+
+![image](https://github.com/user-attachments/assets/a6320bf1-30fc-4693-a769-417b97f6544e)
+
+we can find an admin email in the reviews section "admin@juice-sh.op"
+we tried another sql injection which is **admin@juice-sh.op' OR '1'='1' --** this turns the SQL command to always returning true without the need of a password
+
+![image](https://github.com/user-attachments/assets/7ad06d94-40d0-40d4-b036-76ff46cfb32b)
+
+this is due to improper input sanitization
+
+## Five-Star Feedback
+
+after getting login admin we only had to go to the administration directory we found before in another challenge 
+
+![image](https://github.com/user-attachments/assets/4a688f76-c39f-429e-8464-212899ebbd05)
+
+using admin previliges we only had to click delete
+
+![image](https://github.com/user-attachments/assets/c5b587e4-4b6f-4c87-9918-dee7df643a37)
+
+## Deprecated Interface 
+
+In this one we had to look for a b2b functions or intrface that are no longer properly maintained
+
+![image](https://github.com/user-attachments/assets/518c80f8-75f4-403c-9adb-637300d9b875)
+
+In the Complaint tab on the left side menu, there’s a place to upload files. But after inspecting the code, it shows that its limited to PDF and ZIP files.
+
+![image](https://github.com/user-attachments/assets/bd0b3128-f1ab-44e0-98a6-7cf172bc887e)
+
+we choose an xml file that was mentioned in the main.js as content type. It went through and the challenge was solved
+
+![image](https://github.com/user-attachments/assets/3e9563d8-eaae-4e1e-bc1a-b9b7ac6c3dad)
+
+## Password Strength 
+
+This challenge was simple we just had to guess some passwords, the common ones.
+
+![image](https://github.com/user-attachments/assets/8849f92d-da0f-4415-8ae0-053de34cb5df)
+
+after few guesses we found the password which was admin123
 
 
