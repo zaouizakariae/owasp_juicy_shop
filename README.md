@@ -83,17 +83,80 @@ now that we intercepted the request
 
 we just had to change the rating value to 0 
 
-# 
-
-
 ## Repetitive Registration
+
+in this challenge we got a hint DRY that means don't repeat yourself
+the following image shows the registration request 
+
+![image](https://github.com/user-attachments/assets/9f4c5d44-374b-4bb4-89de-9886c1eb51ea)
+
+we change the value of "passwordrepeat" and forwarded the request
+now the challenged is solved, which shows that there is a problem of server-side validation for this condition.
 
 ## Error Handling 
 
+In this challenge we had to provoke an error using we tried to try and look for a file that does not exist 
+
+```
+http://127.0.0.1:3000/ftp/test.pdf
+```
+
+![image](https://github.com/user-attachments/assets/96f1f817-a0f9-4e1e-a910-44cfeb69f5e2)
+
+it shows also some sensitive data like technology used
+
 ## Outdated Allowlist 
+
+to solve this challenge we knew that we are looking for a redirect crypto currency link 
+
+![image](https://github.com/user-attachments/assets/078d1d71-4e2b-46d6-ab4b-b5239536c380)
+
+So we went to the main.js code and searched for redirect as a keyword  
+
+![image](https://github.com/user-attachments/assets/7882ce70-9d67-4224-9da9-efbba2d3aa91)
+
+we added it to the url and clicked enter 
+
+![image](https://github.com/user-attachments/assets/f2eca986-43cd-4092-b23e-b43e67e24e8c)
 
 ## Confidential Document 
 
+after performing a gobuster command at the start of the challenge one of the directories found was **/ftp** which probably certainly contains important files.
+
+![image](https://github.com/user-attachments/assets/158ae006-05ad-42e0-b6e7-8b98df85bc01)
+
+we took a look at some of the files and found the confiential one  acquisation.md
+
+![image](https://github.com/user-attachments/assets/8fd787fd-5e16-4360-85d0-0700c4ef87cf)
+
 ## Bully Chatbot 
 
+for this challenge we interacted with the support chat bot in order to get a sort of coupon 
+
+to solve the challenge we just had to keep asking dor the coupon 
+
+![image](https://github.com/user-attachments/assets/55134af1-2cf0-4e23-b546-2b50e88a8c32)
+
 ## Missing Encoding 
+
+In this challenge we had that was not loaded correctly on the photo wall
+
+![image](https://github.com/user-attachments/assets/c942b40e-8c03-458e-ab9e-131c928af741)
+
+and it's because of the image tag that contained specialcharacters that were not encoded
+
+![image](https://github.com/user-attachments/assets/fb36c466-27b7-449e-a8eb-7295a52676da)
+
+we used chatgbt to give us the encoded version of the url and that's what we got
+
+
+```
+ assets%2Fpublic%2Fimages%2Fuploads%2F%F0%9F%98%BC-%23zatschi-%23whoneedsfourlegs-1572600969477.jpg
+```
+
+we changed the value of the source and we got as a result the image of the cat
+
+![image](https://github.com/user-attachments/assets/e02b3a3b-3831-452a-b142-8cb93fcbe355)
+
+
+
